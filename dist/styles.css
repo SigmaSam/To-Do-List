@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+h1 {
+    color: red;
+}
+
+@tailwind utilities;
