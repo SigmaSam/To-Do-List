@@ -1,33 +1,36 @@
 {
-    "name": "todo-list",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "dev": "webpack --mode development",
-      "build": "webpack --mode production",
-      "start": "webpack-dev-server --mode development --open"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/SigmaSam/ToDo-List.git"
-    },
-    "authors": "Samuel Almao & Julian Ricardo Ramos", 
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/SigmaSam/ToDo-List./issues"
-    },
-    "homepage": "https://github.com/SigmaSam/ToDo-List.#readme",
-    "devDependencies": {
-      "babel-eslint": "10.1.x",
-      "eslint": "6.8.x",
-      "eslint-config-airbnb-base": "14.1.x",
-      "eslint-plugin-import": "2.20.x",
-      "stylelint": "13.3.x",
-      "stylelint-config-standard": "20.0.x",
-      "stylelint-csstree-validator": "^1.9.0",
-      "stylelint-scss": "3.17.x",
-      "webpack": "^5.24.0",
-      "webpack-cli": "^4.5.0"
-    }
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SigmaSam/ToDo-List.git"
+  },
+  "authors": "Samuel Almao & Julian Ricardo Ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SigmaSam/ToDo-List./issues"
+  },
+  "homepage": "https://github.com/SigmaSam/ToDo-List.#readme",
+  "devDependencies": {
+    "babel-eslint": "10.1.x",
+    "eslint": "6.8.x",
+    "eslint-config-airbnb-base": "14.1.x",
+    "eslint-plugin-import": "2.20.x",
+    "stylelint": "13.3.x",
+    "stylelint-config-standard": "20.0.x",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "3.17.x",
+    "webpack": "^5.24.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.18.0"
   }
+}
