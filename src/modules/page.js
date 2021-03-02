@@ -23,9 +23,6 @@ const addNav = () => {
   
     return nav;
   };
-  
-const 
-
 
 const addControls = () => {
     const controls = document.createElement('footer');
@@ -41,12 +38,15 @@ const addControls = () => {
   const body = () => {
     const content = document.getElementById('content');
     content.className = 'min-w-screen h-screen flex flex-col items-center bg-gray-200';
+    const table = document.createElement('div');
+    table.classList = 'table';
 
   
     const nav = addNav();
     const control = addControls();
 
     content.appendChild(nav);
+    content.appendChild(table);
     content.appendChild(control);
   
 
