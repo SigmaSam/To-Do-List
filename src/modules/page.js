@@ -24,6 +24,7 @@ const addNav = () => {
   };
 const addGrid = () => {
   const grid = document.createElement('div');
+  grid.setAttribute('id', 'grid')
   grid.className = 'grilla bg-white border-2 border-grey rounded p-1 grid grid-cols-4 grid-rows-auto m-auto w-9/12 h-96 '
   
   const title = document.createElement('div');
