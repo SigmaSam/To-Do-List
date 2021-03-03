@@ -1,10 +1,10 @@
 import page from './modules/page';
-import project from './modules/list';
+import modal from './modules/modal';
 
 
 const body = () => {
     page();
-    project();
+    // modal();
 };
   
 body();
