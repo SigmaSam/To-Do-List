@@ -21,31 +21,40 @@ const addNav = () => {
     nav.appendChild(text);
   
     return nav;
-  };
+};
 const addGrid = () => {
   const grid = document.createElement('div');
-  grid.setAttribute('id', 'grid')
-  grid.className = 'grilla bg-white border-2 border-grey rounded p-1 grid grid-cols-4 grid-rows-auto m-auto w-9/12 h-96 '
+
+  grid.setAttribute('id', 'grid');
+  grid.className = 'grilla bg-white border-2 border-grey rounded p-1 grid grid-cols-5 grid-rows-3 m-auto w-9/12 h-96 items-start lg:text-md md:text-sm ';
   
   const title = document.createElement('div');
   title.innerText = 'Chores';
-  title.className = 'border border-white  bg-blue-200 text-bold font-mono text-center max-h-6 rounded'
+  title.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
 
   const desc = document.createElement('div');
   desc.innerText = 'Description';
-  desc.className = 'border border-white  bg-blue-200 text-bold font-mono text-center max-h-6 rounded'
+  desc.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
 
   const time = document.createElement('div');
   time.innerText = 'Created at:';
-  time.className = 'border border-white  bg-blue-200 text-bold font-mono text-center max-h-6 rounded'
+  time.className = 'border border-white bg-blue-200 text-bold font-mono text-center  rounded';
+
+  const priority = document.createElement('div');
+  priority.innerText = 'Priority';
+  priority.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
 
   const check = document.createElement('div');
   check.innerText = 'Status'
-  check.className = 'border border-white  bg-blue-200 text-bold font-mono text-center max-h-6 rounded' 
+  check.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
+
+
+
 
   grid.appendChild(title);
   grid.appendChild(desc);
   grid.appendChild(time);
+  grid.appendChild(priority);
   grid.appendChild(check);
 
   
@@ -62,21 +71,19 @@ const addControls = () => {
     return controls
 }
 
-  const body = () => {
-    const content = document.getElementById('content');
-    content.className = 'min-w-screen h-screen flex flex-col items-center';
+const body = () => {
+  const content = document.getElementById('content');
+  content.className = 'min-w-screen h-screen flex flex-col items-center';
+ 
+  const nav = addNav();
+  const grid = addGrid();
+  const control = addControls();
 
-  
-    const nav = addNav();
-    const grid = addGrid();
-    const control = addControls();
+  content.appendChild(nav);
+  content.appendChild(grid);
+  content.appendChild(control);
 
-    content.appendChild(nav);
-    content.appendChild(grid);
-    content.appendChild(control);
+  return content
+};
   
-
-    return content
-  };
-  
-  export default body;
+export default body;

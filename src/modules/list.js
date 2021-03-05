@@ -1,16 +1,19 @@
 const list = {
   'project1': [{'title':'todo1',
-                'description':'something to do',
-                'time':'play with date-fns',
-                'priority':'low'},
+                'description':'something',
+                'time':'play',
+                'priority':'low',
+                'status':'true'},
                 {'title':'todo2',
                 'description':'something to do',
-                'time':'play with date-fns',
-                'priority':'mid'}],
+                'time':'1233',
+                'priority':'mid',
+                'status':'false'}],
   'project2': [{'title':'todo3',
                 'description':'something to do',
-                'time':'play with date-fns',
-                'priority':'low'}]
+                'time':'3322',
+                'priority':'low',
+                'status': 'false'}]
 }
 
 const todos = (projects) => {
@@ -27,21 +30,30 @@ const showTodos = (chores) => {
   const grid = document.getElementById('grid')
   chores.forEach(chore => {
     const title = document.createElement('div')
-    title.className = 'border border-white bg-blue-200 text-bold font-mono text-center max-h-6 rounded'
+    title.className = 'border border-white bg-blue-200 text-bold font-mono text-center rounded'
     title.textContent = chore['title']
+
     const description = document.createElement('div')
-    description.className = 'border border-white bg-blue-200 text-bold font-mono text-center max-h-6 rounded'
+    description.className = 'border border-white bg-blue-200 text-bold font-mono text-center rounded'
     description.textContent = chore['description']
+    
     const time = document.createElement('div')
-    time.className = 'border border-white bg-blue-200 text-bold font-mono text-center max-h-6 rounded'
+    time.className = 'border border-white bg-blue-200 text-bold font-mono text-center rounded'
     time.textContent = chore['time']
+
     const priority = document.createElement('div')
-    priority.className = 'border border-white bg-blue-200 text-bold font-mono text-center max-h-6 rounded'
+    priority.className = 'border border-white bg-blue-200 text-bold font-mono text-center rounded'
     priority.textContent = chore['priority']
+
+    const status = document.createElement('div')
+    status.className = 'border border-white bg-blue-200 text-bold font-mono text-center rounded'
+    status.textContent = chore['status']
+
     grid.appendChild(title);
     grid.appendChild(description);
     grid.appendChild(time);
     grid.appendChild(priority);
+    grid.appendChild(status);
   })
 }
 

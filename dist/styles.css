@@ -2,9 +2,14 @@
 @tailwind components;
 
 .grilla {
-    height: 30rem;
+    height: 31rem;
+    grid-template-rows: 1.6rem;
 }
 
+.grilla div {
+    max-height: 1.6rem;
+    grid-row-start: auto;
+}
 #content {
     background-image: url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Landscape-Wallpaper-1680x1050.jpg);
     background-size:cover
