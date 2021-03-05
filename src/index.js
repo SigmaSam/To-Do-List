@@ -27,8 +27,9 @@ const addEvents = () => {
     
     window.addEventListener('click', win);
 
-    addNew.addEventListener('click', ()=>{
-        console.log('this shit works');
+    addNew.addEventListener('click', (e)=>{
+        e.preventDefault
+        addNewChore();
     });
     
 }

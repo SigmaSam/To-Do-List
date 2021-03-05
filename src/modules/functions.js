@@ -1,4 +1,4 @@
-const chores = [];
+const chores =  JSON.parse(localStorage.getItem('chores')) ||[];
 
 class Chore { 
     constructor(title, description, time, priority, group, status = false) {
@@ -16,9 +16,7 @@ const saveLocal = () => {
 }
   
 const addChore = (chore) => {
-    console.log({chore})
     chores.push(chore);
-    console.log('hello world');
     saveLocal();
 }
   
