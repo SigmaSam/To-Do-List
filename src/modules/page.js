@@ -37,7 +37,7 @@ const addGrid = () => {
   desc.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
 
   const time = document.createElement('div');
-  time.innerText = 'Created at:';
+  time.innerText = 'Due to:';
   time.className = 'border border-white bg-blue-200 text-bold font-mono text-center  rounded';
 
   const priority = document.createElement('div');

@@ -1,33 +1,4 @@
-class Chore { 
-  constructor(title, description, time, priority,group,status) {
-    this.title = title;
-    this.description = description;
-    this.time = time;
-    this.priority = priority;
-    this.group = group;
-    this.status = status;
-  } 
-}
-
-const chores = [];
-
-const addChore = (chore) => {
-  chores.push(chore);
-}
-
-const addNew = () => {
-  const inputs = document.getElementsByTagName('input');
-  const title = inputs[0].value;
-  const description = inputs[1].value;
-  const time = inputs[2].value;
-  const priority = inputs[3].value;
-  const chore = new Chore(title, description, time, priority);
-  addChore(chore);
-};
-    
-
 const modal = () => {
-
   const body = document.getElementById('content');
   const cont = document.createElement('div');
   cont.setAttribute('id','modal');
@@ -61,7 +32,7 @@ const modal = () => {
 
   const labelThree = document.createElement('label');
   labelThree.setAttribute('for', 'time');
-  labelThree.innerText = 'Time';
+  labelThree.innerText = 'Due to:';
   labelThree.className = 'font-bold';
   
   const inputThree = document.createElement('input');
@@ -100,6 +71,8 @@ const modal = () => {
   dataFour.appendChild(valHigh);
   dataFour.appendChild(valMid);
   dataFour.appendChild(valLow);
+
+  // const labelFive = document.createElement('select');
     
   const butBox = document.createElement('div');
   butBox.className = 'flex justify-between';
@@ -133,7 +106,6 @@ const modal = () => {
     
   return body;
 }
-
 
 
 export default modal;
