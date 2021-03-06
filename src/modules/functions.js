@@ -36,4 +36,4 @@ function addNewChore() {
 };
 
 
-export {chores, addNewChore };
+export {chores, addNewChore, saveLocal };

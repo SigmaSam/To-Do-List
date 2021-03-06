@@ -24,38 +24,41 @@ const addNav = () => {
 };
 const addGrid = () => {
   const grid = document.createElement('div');
-
   grid.setAttribute('id', 'grid');
-  grid.className = 'grilla bg-white border-2 border-grey rounded p-1 grid grid-cols-5 grid-rows-3 m-auto w-9/12 h-96 items-start lg:text-md md:text-sm ';
+  grid.className = 'grilla bg-white border-2 border-grey rounded p-1 flex flex-col m-auto w-9/12 h-96 lg:text-md md:text-sm';
   
-  const title = document.createElement('div');
+  const cont = document.createElement('div');
+  cont.className = 'flex justify-between w-full'
+
+  const title = document.createElement('p');
   title.innerText = 'Chores';
-  title.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
+  title.className = 'border border-white w-1/5  bg-blue-200 text-bold font-mono text-center  rounded';
 
-  const desc = document.createElement('div');
+  const desc = document.createElement('p');
   desc.innerText = 'Description';
-  desc.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
+  desc.className = 'border border-white w-1/5 bg-blue-200 text-bold font-mono text-center  rounded';
 
-  const time = document.createElement('div');
+  const time = document.createElement('p');
   time.innerText = 'Due to:';
-  time.className = 'border border-white bg-blue-200 text-bold font-mono text-center  rounded';
+  time.className = 'border border-white w-1/5  bg-blue-200 text-bold font-mono text-center  rounded';
 
-  const priority = document.createElement('div');
+  const priority = document.createElement('p');
   priority.innerText = 'Priority';
-  priority.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
+  priority.className = 'border border-white w-1/5 bg-blue-200 text-bold font-mono text-center  rounded';
 
-  const check = document.createElement('div');
+  const check = document.createElement('p');
   check.innerText = 'Status'
-  check.className = 'border border-white  bg-blue-200 text-bold font-mono text-center  rounded';
+  check.className = 'border border-white w-1/5 bg-blue-200 text-bold font-mono text-center  rounded';
 
 
 
 
-  grid.appendChild(title);
-  grid.appendChild(desc);
-  grid.appendChild(time);
-  grid.appendChild(priority);
-  grid.appendChild(check);
+  cont.appendChild(title);
+  cont.appendChild(desc);
+  cont.appendChild(time);
+  cont.appendChild(priority);
+  cont.appendChild(check);
+  grid.appendChild(cont);
 
   
   return grid

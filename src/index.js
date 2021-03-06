@@ -1,7 +1,7 @@
 import page from './modules/page';
 import modal from './modules/modal';
 import list from './modules/list';
-import {chores, addNewChore } from './modules/functions';
+import {chores, addNewChore, saveLocal } from './modules/functions';
 
 console.log(chores);
 
@@ -10,6 +10,7 @@ const addEvents = () => {
     const modCont = document.querySelector('#modal');
     const span = document.querySelector('#cancel');
     const addNew = document.querySelector('#newChore');
+    const check = document.querySelector('#check');
     
     const win = (event) => {
         if (event.target === modCont) {
@@ -31,11 +32,20 @@ const addEvents = () => {
         e.preventDefault
         addNewChore();
     });
-    
+
+    check.addEventListener('change', (e) => {
+      e.preventDefault
+      if (check.checked) {
+        check.value = true;
+        saveLocal();
+      } else {
+        check.value = false;
+        saveLocal();    
+        }
+     });
 }
 
 const body = () => {
-    
     page();
     list();
     modal();

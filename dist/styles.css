@@ -3,11 +3,9 @@
 
 .grilla {
     height: 31rem;
-    grid-template-rows: 1.6rem;
 }
 
 .grilla div {
-    max-height: 1.6rem;
     grid-row-start: auto;
 }
 #content {
