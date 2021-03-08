@@ -107,5 +107,50 @@ const modal = () => {
   return body;
 }
 
+const modalGroup = () => {
+  const body = document.getElementById('content');
+  const cont = document.createElement('div');
+  cont.setAttribute('id','modalGroup');
+  cont.className = 'hidden fixed z-10 inset-0  overflow-auto bg-black bg-opacity-20 w-full h-full font-mono';
 
-export default modal;
+  const content = document.createElement('form');
+  content.className = 'modal-content border-black bg-white flex flex-col items-center mx-auto mt-52 p-15 w-1/3 rounded border border-gray-500';
+
+  const labelOne = document.createElement('label');
+  labelOne.setAttribute('for', 'gName');
+  labelOne.innerText = 'Create a Group';
+  labelOne.className = 'font-bold';
+
+  const inputOne = document.createElement('input');
+  inputOne.setAttribute('type', 'text');
+  inputOne.setAttribute('id','gName');
+  inputOne.setAttribute('name','gName');
+  inputOne.className = 'border rounded border-black';
+    
+  const butBox = document.createElement('div');
+  butBox.className = 'flex justify-between font-sm';
+
+  const newGroup = document.createElement('button');
+  newGroup.className = 'bg-green-500 border border-black rounded px-4 py-1 m-2 mt-2';
+  newGroup.setAttribute('type','submit')
+  newGroup.setAttribute('id','newGroup');
+  newGroup.innerText = 'Create New'
+
+  const cancel = document.createElement('button');
+  cancel.setAttribute('id','cancel');
+  cancel.setAttribute('type','button');
+  cancel.className = 'bg-white px-4 py-1 m-2 mt-2 rounded border border-black'
+  cancel.innerText = 'Cancel';
+
+  content.appendChild(labelOne);
+  content.appendChild(inputOne);
+  content.appendChild(butBox);
+  butBox.appendChild(newGroup);
+  butBox.appendChild(cancel);
+  cont.appendChild(content);
+  body.appendChild(cont)
+    
+  return body;
+}
+
+export {modal,modalGroup};

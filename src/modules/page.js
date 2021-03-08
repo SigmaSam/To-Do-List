@@ -2,7 +2,7 @@ const button = (name) => {
     const btn = document.createElement('button');
     btn.setAttribute('id', name);
     btn.innerHTML = name;
-    btn.className = 'p-4 mx-1 rounded-full border-2 border-black ring-white font-bold text-sm capitalize italic bg-gray-400'
+    btn.className = 'p-5 max-w-1/2 mx-1 rounded-full border-2 border-black ring-white font-bold text-sm capitalize italic bg-gray-400'
 
     return btn;
 }
@@ -68,8 +68,10 @@ const addControls = () => {
     controls.className = 'flex bg-blue-300 w-1/2 h-16 rounded-full position absolute bottom-0 border border-black items-center justify-center ring ring-white'
 
     const add = button('add');
+    const group = button('group');
     
     controls.appendChild(add);
+    controls.appendChild(group);
 
     return controls
 }

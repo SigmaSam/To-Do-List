@@ -1,4 +1,4 @@
-import {chores,saveLocal} from './functions';
+import {chores} from './functions';
 
 const list = chores;
 
@@ -12,9 +12,7 @@ const todos = (projects) => {
 
 const showTodos = (chores) => {
   const grid = document.getElementById('grid');
-
-
-
+  
   chores.forEach(chore => {
     const cont = document.createElement('div');
     cont.className = 'flex justify-between w-full';
@@ -52,10 +50,6 @@ const showTodos = (chores) => {
     status.setAttribute('id','check');
     status.setAttribute('type','checkbox'); 
     
-   if (chore['status'] === true) {
-    status.value = true;
-   };
-
     cont.appendChild(title);
     cont.appendChild(description);
     cont.appendChild(time);

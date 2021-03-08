@@ -1,4 +1,4 @@
-const chores =  JSON.parse(localStorage.getItem('chores')) ||[];
+const chores =  JSON.parse(localStorage.getItem('chores')) || [];
 
 class Chore { 
     constructor(title, description, time, priority, group, status = false) {
@@ -7,7 +7,6 @@ class Chore {
       this.time = time;
       this.priority = priority;
       this.group = group;
-      this.status = status;
     } 
 };
 
@@ -19,7 +18,11 @@ const addChore = (chore) => {
     chores.push(chore);
     saveLocal();
 }
-  
+
+const addGroup = () => {
+    console.log('cat');
+}
+
 function addNewChore() {
     const inputs = document.getElementsByTagName('input');
     const textarea = document.getElementsByTagName('textarea');
@@ -35,5 +38,10 @@ function addNewChore() {
     console.log('hello world');
 };
 
+const addNewGroup =  (name) => {
+    console.log('cat');
+    saveLocal();
+}
 
-export {chores, addNewChore, saveLocal };
+
+export {chores,addNewChore, saveLocal, addNewGroup };

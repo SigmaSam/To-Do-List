@@ -1,20 +1,27 @@
 import page from './modules/page';
-import modal from './modules/modal';
+import {modal, modalGroup} from './modules/modal';
 import list from './modules/list';
-import {chores, addNewChore, saveLocal } from './modules/functions';
+import {chores, addNewChore, addNewGroup, saveLocal } from './modules/functions';
 
 console.log(chores);
 
 const addEvents = () => {
     const addButton = document.getElementById('add');
+    const groupButton = document.getElementById('group');
     const modCont = document.querySelector('#modal');
+    const modGroup = document.querySelector('#modalGroup');
     const span = document.querySelector('#cancel');
     const addNew = document.querySelector('#newChore');
-    const check = document.querySelector('#check');
-    
-    const win = (event) => {
+    const addNewG = document.querySelector('#newGroup');
+    const winOne = (event) => {
         if (event.target === modCont) {
           modCont.style.display = 'none';
+        }
+    };
+
+    const winTwo = (event) => {
+        if (event.target === modGroup) {
+          modGroup.style.display = 'none';
         }
     };
 
@@ -26,29 +33,34 @@ const addEvents = () => {
         modCont.style.display = 'none';
     });
     
-    window.addEventListener('click', win);
+    window.addEventListener('click', winOne);
 
     addNew.addEventListener('click', (e)=>{
         e.preventDefault
         addNewChore();
     });
+    
+    groupButton.addEventListener('click', () => {
+        modGroup.style.display = 'block';
+    });
 
-    check.addEventListener('change', (e) => {
-      e.preventDefault
-      if (check.checked) {
-        check.value = true;
-        saveLocal();
-      } else {
-        check.value = false;
-        saveLocal();    
-        }
-     });
+    span.addEventListener('click', () => {
+        modGroup.style.display = 'none';
+    });
+    
+    window.addEventListener('click', winTwo);
+
+    addNewG.addEventListener('click', (e)=>{
+        e.preventDefault
+        addNewGroup();
+    });
 }
 
 const body = () => {
     page();
     list();
     modal();
+    modalGroup();
     addEvents();
 };
 
