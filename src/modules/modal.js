@@ -1,3 +1,5 @@
+import {groups} from './functions';
+
 const modal = () => {
   const body = document.getElementById('content');
   const cont = document.createElement('div');
@@ -56,23 +58,26 @@ const modal = () => {
   inputFour.setAttribute('value','1');
   inputFour.className = 'border rounded border-black text-center';
 
-  const dataFour = document.createElement('datalist');
-  dataFour.setAttribute('id', 'marks');
+  const labelFive = document.createElement('label');
+  labelFive.setAttribute('for','groups');
+  labelFive.innerText = 'Asign it a Group';
+  labelFive.className = 'font-bold';
+  
+  const inputFive = document.createElement('select');
+  inputFive.setAttribute('id','groups');
 
-  const valLow = document.createElement('option');
-  valLow.setAttribute('value','1');
+  const selOption = document.createElement('option');
+  selOption.setAttribute('value','');
+  selOption.innerText = 'Asign a Group';
+  
+  inputFive.appendChild(selOption);
 
-  const valMid = document.createElement('option');
-  valMid.setAttribute('value','2');
+  for (let i = 0; i < groups.length; i++) {
+    selOption.setAttribute('value',groups[i]);
+    selOption.innerText = groups[i];
 
-  const valHigh = document.createElement('option');
-  valHigh.setAttribute('value','3');
-
-  dataFour.appendChild(valHigh);
-  dataFour.appendChild(valMid);
-  dataFour.appendChild(valLow);
-
-  // const labelFive = document.createElement('select');
+    inputFive.appendChild(selOption);
+  }
     
   const butBox = document.createElement('div');
   butBox.className = 'flex justify-between';
@@ -97,7 +102,8 @@ const modal = () => {
   content.appendChild(inputThree);
   content.appendChild(labelFour);
   content.appendChild(inputFour);
-  content.appendChild(dataFour);
+  content.appendChild(labelFive);
+  content.appendChild(inputFive)
   content.appendChild(butBox);
   butBox.appendChild(newChore);
   butBox.appendChild(cancel);
