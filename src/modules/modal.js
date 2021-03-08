@@ -137,7 +137,7 @@ const modalGroup = () => {
   newGroup.innerText = 'Create New'
 
   const cancel = document.createElement('button');
-  cancel.setAttribute('id','cancel');
+  cancel.setAttribute('id','cancelG');
   cancel.setAttribute('type','button');
   cancel.className = 'bg-white px-4 py-1 m-2 mt-2 rounded border border-black'
   cancel.innerText = 'Cancel';

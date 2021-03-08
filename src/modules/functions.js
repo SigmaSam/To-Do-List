@@ -19,8 +19,12 @@ const addChore = (chore) => {
     saveLocal();
 }
 
-const addGroup = () => {
-    console.log('cat');
+const addGroup = (group) => {
+    console.log('cat')
+    chores.push(group);
+    chores[group] = {};
+    console.log('cat')
+    saveLocal();   
 }
 
 function addNewChore() {
@@ -35,11 +39,13 @@ function addNewChore() {
     const newChore = new Chore(title, description, time, priority,status);
 
     addChore(newChore);
-    console.log('hello world');
 };
 
 const addNewGroup =  (name) => {
-    console.log('cat');
+    const inputs = document.getElementsByTagName('input');
+    const group = inputs[0].value;
+    
+    addGroup(group);
     saveLocal();
 }
 

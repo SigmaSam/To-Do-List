@@ -10,7 +10,8 @@ const addEvents = () => {
     const groupButton = document.getElementById('group');
     const modCont = document.querySelector('#modal');
     const modGroup = document.querySelector('#modalGroup');
-    const span = document.querySelector('#cancel');
+    const spanOne = document.querySelector('#cancel');
+    const spanTwo = document.querySelector('#cancelG');
     const addNew = document.querySelector('#newChore');
     const addNewG = document.querySelector('#newGroup');
     const winOne = (event) => {
@@ -29,7 +30,7 @@ const addEvents = () => {
         modCont.style.display = 'block';
     });
 
-    span.addEventListener('click', () => {
+    spanOne.addEventListener('click', () => {
         modCont.style.display = 'none';
     });
     
@@ -39,12 +40,12 @@ const addEvents = () => {
         e.preventDefault
         addNewChore();
     });
-    
+
     groupButton.addEventListener('click', () => {
         modGroup.style.display = 'block';
     });
 
-    span.addEventListener('click', () => {
+    spanTwo.addEventListener('click', () => {
         modGroup.style.display = 'none';
     });
     
