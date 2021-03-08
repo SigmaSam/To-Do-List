@@ -73,10 +73,11 @@ const modal = () => {
   inputFive.appendChild(selOption);
 
   for (let i = 0; i < groups.length; i++) {
-    selOption.setAttribute('value',groups[i]);
-    selOption.innerText = groups[i];
+    const opt = document.createElement('option');
+    opt.setAttribute('value',groups[i]);
+    opt.innerText = groups[i];
 
-    inputFive.appendChild(selOption);
+    inputFive.appendChild(opt);
   }
     
   const butBox = document.createElement('div');

@@ -2,7 +2,7 @@ const chores =  JSON.parse(localStorage.getItem('chores')) || [];
 const groups =  JSON.parse(localStorage.getItem('groups')) || [];
 
 class Chore { 
-    constructor(title, description, time, priority, group, status = false) {
+    constructor(title, description, time, priority, group = false, status = false) {
       this.title = title;
       this.description = description;
       this.time = time;
@@ -35,9 +35,10 @@ function addNewChore() {
     const description = textarea[0].value;
     const time = inputs[2].value;
     const priority = inputs[3].value;
+    const group = inputs[4].value
     const status = false
 
-    const newChore = new Chore(title, description, time, priority, status);
+    const newChore = new Chore(title, description, time, priority, group, status);
 
     addChore(newChore);
 };
