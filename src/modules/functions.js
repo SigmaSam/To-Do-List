@@ -28,15 +28,16 @@ const addGroup = (group) => {
 }
 
 function addNewChore() {
-    const inputs = document.getElementsByTagName('input');
+    const form = document.getElementsByTagName('form')
+    const inputs = form[0]
     const textarea = document.getElementsByTagName('textarea');
     const title = inputs[0].value;
     const description = textarea[0].value;
-    const time = inputs[1].value;
-    const priority = inputs[2].value;
+    const time = inputs[2].value;
+    const priority = inputs[3].value;
     const status = false
 
-    const newChore = new Chore(title, description, time, priority,status);
+    const newChore = new Chore(title, description, time, priority, status);
 
     addChore(newChore);
 };

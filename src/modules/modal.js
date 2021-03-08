@@ -37,8 +37,8 @@ const modal = () => {
   
   const inputThree = document.createElement('input');
   inputThree.setAttribute('type', 'date')
-  inputThree.setAttribute('id','description');
-  inputThree.setAttribute('name','description');
+  inputThree.setAttribute('id','time');
+  inputThree.setAttribute('name','time');
   inputThree.className = 'border rounded border-black text-center';
 
   const labelFour = document.createElement('label');
