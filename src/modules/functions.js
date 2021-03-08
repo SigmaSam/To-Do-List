@@ -1,4 +1,5 @@
 const chores =  JSON.parse(localStorage.getItem('chores')) || [];
+const groups =  JSON.parse(localStorage.getItem('groups')) || [];
 
 class Chore { 
     constructor(title, description, time, priority, group, status = false) {
@@ -10,21 +11,20 @@ class Chore {
     } 
 };
 
-const saveLocal = () => {
+const saveLocalChore = () => {
     localStorage.setItem('chores', JSON.stringify(chores));
+}
+const saveLocalGroup= () => {
+    localStorage.setItem('groups', JSON.stringify(groups));
 }
   
 const addChore = (chore) => {
     chores.push(chore);
-    saveLocal();
+    saveLocalChore();
 }
-
-const addGroup = (group) => {
-    console.log('cat')
-    chores.push(group);
-    chores[group] = {};
-    console.log('cat')
-    saveLocal();   
+const addGroup = (name) => {
+    groups.push(name);
+    saveLocalGroup();
 }
 
 function addNewChore() {
@@ -51,4 +51,4 @@ const addNewGroup =  (name) => {
 }
 
 
-export {chores,addNewChore, saveLocal, addNewGroup };
+export {chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup };

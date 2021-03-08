@@ -1,9 +1,10 @@
 import page from './modules/page';
 import {modal, modalGroup} from './modules/modal';
 import list from './modules/list';
-import {chores, addNewChore, addNewGroup, saveLocal } from './modules/functions';
+import {chores, addNewChore, addNewGroup, groups } from './modules/functions';
 
 console.log(chores);
+console.log(groups);
 
 const addEvents = () => {
     const addButton = document.getElementById('add');
