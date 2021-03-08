@@ -115,6 +115,7 @@ const modalGroup = () => {
 
   const content = document.createElement('form');
   content.className = 'modal-content border-black bg-white flex flex-col items-center mx-auto mt-52 p-15 w-1/3 rounded border border-gray-500';
+  content.setAttribute('id','groupForm');
 
   const labelOne = document.createElement('label');
   labelOne.setAttribute('for', 'gName');

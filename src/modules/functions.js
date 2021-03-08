@@ -42,12 +42,10 @@ function addNewChore() {
     addChore(newChore);
 };
 
-const addNewGroup =  (name) => {
-    const inputs = document.getElementsByTagName('input');
-    const group = inputs[0].value;
-    
+const addNewGroup =  () => {
+    const form = document.getElementById('groupForm');
+    const group = form[0].value;
     addGroup(group);
-    saveLocal();
 }
 
 
