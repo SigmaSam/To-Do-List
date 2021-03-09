@@ -1,4 +1,4 @@
-import {chores, groups} from './functions';
+import {chores, saveLocalChore} from './functions';
 
 const list = chores;
 
@@ -55,9 +55,17 @@ const showTodos = (chores) => {
     checkBox.className = 'w-1/5 border border-white rounded flex justify-center';
 
     const status = document.createElement('button')
-    status.setAttribute('id','');
-    status.className = 'border border-black bg-white font-bold px-1 rounded '
-    status.innerHTML = 'To Do'
+    status.className = 'border border-black bg-white font-bold px-1 rounded'
+    status.innertext = chore['status'] === true ? status.textContent = 'Done' : status.textContent = 'To Do';
+    
+    const changeStatus = () => {
+      chore['status'] === true ? chore['status'] = false : chore['status'] = true;
+      saveLocalChore();
+      chore['status'] === true ? status.textContent = 'Done' : status.textContent = 'To Do'
+      window.location.reload();
+    }
+    
+    status.addEventListener('click', changeStatus); 
     
     cont.appendChild(title);
     cont.appendChild(description);
