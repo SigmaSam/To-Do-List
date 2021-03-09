@@ -1,53 +1,55 @@
-const chores =  JSON.parse(localStorage.getItem('chores')) || [];
-const groups =  JSON.parse(localStorage.getItem('groups')) || [];
+const chores = JSON.parse(localStorage.getItem('chores')) || [];
+const groups = JSON.parse(localStorage.getItem('groups')) || [];
 
-class Chore { 
-    constructor(title, description, time, priority, group = false, status = false) {
-      this.title = title;
-      this.description = description;
-      this.time = time;
-      this.priority = priority;
-      this.status = status;
-      this.group = group;
-    } 
-};
+class Chore {
+  constructor(title, description, time, priority, group = false, status = false) {
+    this.title = title;
+    this.description = description;
+    this.time = time;
+    this.priority = priority;
+    this.status = status;
+    this.group = group;
+  }
+}
 
 const saveLocalChore = () => {
-    localStorage.setItem('chores', JSON.stringify(chores));
-}
-const saveLocalGroup= () => {
-    localStorage.setItem('groups', JSON.stringify(groups));
-}
-  
-const addChore = (chore) => {
-    chores.push(chore);
-    saveLocalChore();
-}
-const addGroup = (name) => {
-    groups.push(name);
-    saveLocalGroup();
-}
-
-function addNewChore() {
-    const form = document.getElementsByTagName('form')
-    const inputs = form[0]
-    const textarea = document.getElementsByTagName('textarea');
-    const title = inputs[0].value;
-    const description = textarea[0].value;
-    const time = inputs[2].value;
-    const priority = inputs[3].value;
-    const group = inputs[4].value
-    const status = false
-
-    const newChore = new Chore(title, description, time, priority, group, status);
-
-    addChore(newChore);
+  localStorage.setItem('chores', JSON.stringify(chores));
+};
+const saveLocalGroup = () => {
+  localStorage.setItem('groups', JSON.stringify(groups));
 };
 
-const addNewGroup =  () => {
-    const form = document.getElementById('groupForm');
-    const group = form[0].value;
-    addGroup(group);
+const addChore = (chore) => {
+  chores.push(chore);
+  saveLocalChore();
+};
+const addGroup = (name) => {
+  groups.push(name);
+  saveLocalGroup();
+};
+
+function addNewChore() {
+  const form = document.getElementsByTagName('form');
+  const inputs = form[0];
+  const textarea = document.getElementsByTagName('textarea');
+  const title = inputs[0].value;
+  const description = textarea[0].value;
+  const time = inputs[2].value;
+  const priority = inputs[3].value;
+  const group = inputs[4].value;
+  const status = false;
+
+  const newChore = new Chore(title, description, time, priority, group, status);
+
+  addChore(newChore);
 }
 
-export {chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup };
+const addNewGroup = () => {
+  const form = document.getElementById('groupForm');
+  const group = form[0].value;
+  addGroup(group);
+};
+
+export {
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup,
+};
