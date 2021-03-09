@@ -3,12 +3,7 @@ import { modal, modalGroup } from './modules/modal';
 import {
   project, sortPrio, sortTime, filter,
 } from './modules/list';
-import {
-  chores, addNewChore, addNewGroup, groups,
-} from './modules/functions';
-
-console.log(chores);
-console.log(groups);
+import { addNewChore, addNewGroup, groups } from './modules/functions';
 
 const addEvents = () => {
   const addButton = document.getElementById('Add Chore');
@@ -73,7 +68,7 @@ const addEvents = () => {
     sortTime();
   });
 
-  for (let i = 0; i < groups.length; i++) {
+  for (let i = 0; i < groups.length; i += 1) {
     const groupBtn = document.getElementById(groups[i]);
     groupBtn.addEventListener('click', (e) => {
       e.preventDefault;

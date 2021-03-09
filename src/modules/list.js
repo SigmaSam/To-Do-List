@@ -2,7 +2,7 @@ import { chores, saveLocalChore } from './functions';
 
 const list = chores;
 
-const todos = (projects) => {
+const todos = () => {
   const todos = [];
   list.forEach(chore => {
     todos.push(chore);
@@ -41,12 +41,11 @@ const showTodos = (chores) => {
     priority.className = 'border border-white text-bold font-mono text-center rounded w-1/5';
 
     const prioValue = (arg) => {
-      if (arg == 1) {
-        return priority.textContent = 'Low';
-      } if (arg == 2) {
-        return priority.textContent = 'Mid';
-      }
-      return priority.textContent = 'High';
+      if (arg === '1') {
+        priority.textContent = 'Low';
+      } else if (arg === '2') {
+        priority.textContent = 'Mid';
+      } else { priority.textContent = 'High'; }
     };
 
     prioValue(chore.priority);
@@ -101,8 +100,6 @@ const sortPrio = () => {
 };
 
 const sortTime = () => {
-  const first = document.getElementsByClassName('flex justify-between w-full chore-row');
-  console.log(first);
   chores.sort((a, b) => {
     if (chores[0].time < chores[chores.length - 1].time) {
       if (a.time < b.time) {
@@ -132,9 +129,7 @@ const filter = (group) => {
 };
 
 const project = () => {
-  const all = list;
-  const projects = Object.keys(all);
-  const allTodos = todos(projects);
+  const allTodos = todos();
   showTodos(allTodos);
 };
 

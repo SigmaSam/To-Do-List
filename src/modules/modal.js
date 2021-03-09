@@ -72,7 +72,7 @@ const modal = () => {
 
   inputFive.appendChild(selOption);
 
-  for (let i = 0; i < groups.length; i++) {
+  for (let i = 0; i < groups.length; i += 1) {
     const opt = document.createElement('option');
     opt.setAttribute('value', groups[i]);
     opt.innerText = groups[i];

@@ -97,7 +97,7 @@ const addControls = () => {
 
   const colors = ['pink', 'purple', 'indigo', 'blue', 'green', 'yellow', 'red'];
 
-  for (let i = 0; i < groups.length; i++) {
+  for (let i = 0; i < groups.length; i += 1) {
     const color = colors[Math.floor(Math.random() * colors.length)];
     const btn = button(groups[i]);
     btn.classList.add(`bg-${color}-700`, 'whitespace-normal', 'break-words');
