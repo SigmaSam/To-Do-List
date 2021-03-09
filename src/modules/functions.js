@@ -7,6 +7,7 @@ class Chore {
       this.description = description;
       this.time = time;
       this.priority = priority;
+      this.status = status;
       this.group = group;
     } 
 };
