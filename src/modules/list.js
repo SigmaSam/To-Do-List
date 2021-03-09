@@ -22,22 +22,23 @@ const showTodos = (chores) => {
   
   chores.forEach(chore => {
     const cont = document.createElement('div');
-    cont.className = 'flex justify-between w-full chore-row';
+    cont.setAttribute('id',chore['title'])
+    cont.className = 'flex justify-between w-full bg-gray-300 font-mono font-sm chore-row';
 
     const title = document.createElement('div')
-    title.className = 'border border-white bg-gray-300 text-bold font-mono text-center rounded w-1/5'
+    title.className = 'border border-white text-bold font-mono text-center rounded w-1/5'
     title.textContent = chore['title']
 
     const description = document.createElement('div')
-    description.className = 'border border-white bg-gray-300 text-bold font-mono text-center rounded w-1/5'
+    description.className = 'border border-white text-bold font-mono text-center rounded w-1/5'
     description.textContent = chore['description']
     
     const time = document.createElement('div')
-    time.className = 'border border-white bg-gray-300 text-bold font-mono text-center rounded w-1/5'
+    time.className = 'border border-white text-bold font-mono text-center rounded w-1/5'
     time.textContent = chore['time']
 
     const priority = document.createElement('div')
-    priority.className = 'border border-white bg-gray-300 text-bold font-mono text-center rounded w-1/5'
+    priority.className = 'border border-white text-bold font-mono text-center rounded w-1/5'
 
     const prioValue = (arg) => { if (arg == 1) {
       return priority.textContent = 'Low';
@@ -51,11 +52,12 @@ const showTodos = (chores) => {
     prioValue(chore['priority']);
      
     const checkBox = document.createElement('div');
-    checkBox.className = 'w-1/5 border border-white bg-gray-300 rounded flex justify-center';
+    checkBox.className = 'w-1/5 border border-white rounded flex justify-center';
 
-    const status = document.createElement('input')
-    status.setAttribute('id','check');
-    status.setAttribute('type','checkbox'); 
+    const status = document.createElement('button')
+    status.setAttribute('id','');
+    status.className = 'border border-black bg-white font-bold px-1 rounded '
+    status.innerHTML = 'To Do'
     
     cont.appendChild(title);
     cont.appendChild(description);
