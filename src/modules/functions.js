@@ -49,5 +49,4 @@ const addNewGroup =  () => {
     addGroup(group);
 }
 
-
 export {chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup };

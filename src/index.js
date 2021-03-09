@@ -1,6 +1,6 @@
 import page from './modules/page';
 import {modal, modalGroup} from './modules/modal';
-import list from './modules/list';
+import {project, sortPrio, sortTime } from './modules/list';
 import {chores, addNewChore, addNewGroup, groups } from './modules/functions';
 
 console.log(chores);
@@ -15,6 +15,8 @@ const addEvents = () => {
     const spanTwo = document.querySelector('#cancelG');
     const addNew = document.querySelector('#newChore');
     const addNewG = document.querySelector('#newGroup');
+    const sortBtn = document.querySelector('#sort');
+    const sortTimeBtn = document.querySelector('#sortTime');
     const winOne = (event) => {
         if (event.target === modCont) {
           modCont.style.display = 'none';
@@ -56,11 +58,21 @@ const addEvents = () => {
         e.preventDefault
         addNewGroup();
     });
+    
+    sortBtn.addEventListener('click', (e)=>{
+        e.preventDefault
+        sortPrio();
+    })
+
+    sortTimeBtn.addEventListener('click', (e)=>{
+        e.preventDefault
+        sortTime();
+    })
 }
 
 const body = () => {
     page();
-    list();
+    project();
     modal();
     modalGroup();
     addEvents();

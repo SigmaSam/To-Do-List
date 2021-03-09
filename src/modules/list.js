@@ -10,12 +10,19 @@ const todos = (projects) => {
   return todos;
 };
 
+const cleanGrid = () => {
+  const del = document.getElementsByClassName('flex justify-between w-full chore-row')
+  while(del[0]) {
+    del[0].parentNode.removeChild(del[0])
+  }
+}
+
 const showTodos = (chores) => {
   const grid = document.getElementById('grid');
   
   chores.forEach(chore => {
     const cont = document.createElement('div');
-    cont.className = 'flex justify-between w-full';
+    cont.className = 'flex justify-between w-full chore-row';
 
     const title = document.createElement('div')
     title.className = 'border border-white bg-gray-300 text-bold font-mono text-center rounded w-1/5'
@@ -60,6 +67,56 @@ const showTodos = (chores) => {
   })
 }
 
+const sortPrio = () => {
+  chores.sort((a, b) => {
+    if (chores[0].priority === '1') {
+      if (a.priority < b.priority) {
+        return 1;
+      }
+      if (a.priority > b.priority) {
+        return -1;
+      }
+      return 0;
+    } else {
+      if (a.priority > b.priority) {
+        return 1;
+      }
+      if (a.priority < b.priority) {
+        return -1;
+      }
+      return 0;
+    }
+  })
+  cleanGrid();
+  showTodos(chores);
+}
+
+const sortTime = () => {
+  const first = document.getElementsByClassName('flex justify-between w-full chore-row')
+  console.log(first)
+  chores.sort((a, b) => {
+    if (chores[0].time < chores[chores.length-1].time) {
+      if (a.time < b.time) {
+        return 1;
+      }
+      if (a.time > b.time) {
+        return -1;
+      }
+      return 0;
+    } else {
+      if (a.time > b.time) {
+        return 1;
+      }
+      if (a.time < b.time) {
+        return -1;
+      }
+      return 0;
+    }
+  })
+  cleanGrid();
+  showTodos(chores);
+}
+
 const project = () => {
   const all = list;
   const projects = Object.keys(all)
@@ -67,4 +124,4 @@ const project = () => {
   showTodos(allTodos);
 }
 
-export default project;
+export {project, sortPrio, sortTime};

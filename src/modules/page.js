@@ -38,11 +38,13 @@ const addGrid = () => {
   desc.innerText = 'Description';
   desc.className = 'border border-white w-1/5 bg-blue-200 text-bold font-mono text-center  rounded';
 
-  const time = document.createElement('p');
+  const time = document.createElement('button');
+  time.setAttribute('id', 'sortTime')
   time.innerText = 'Due to:';
   time.className = 'border border-white w-1/5  bg-blue-200 text-bold font-mono text-center  rounded';
 
-  const priority = document.createElement('p');
+  const priority = document.createElement('button');
+  priority.setAttribute('id', 'sort')
   priority.innerText = 'Priority';
   priority.className = 'border border-white w-1/5 bg-blue-200 text-bold font-mono text-center  rounded';
 
