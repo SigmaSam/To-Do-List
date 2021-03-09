@@ -28,7 +28,7 @@ const addGroup = (name) => {
   saveLocalGroup();
 };
 
-function addNewChore() {
+const addNewChore = () => {
   const form = document.getElementsByTagName('form');
   const inputs = form[0];
   const textarea = document.getElementsByTagName('textarea');
