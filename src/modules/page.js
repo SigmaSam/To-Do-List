@@ -3,7 +3,6 @@ import { groups } from './functions';
 const button = (name) => {
   const btn = document.createElement('button');
 
-
   btn.setAttribute('id', name);
   btn.setAttribute('alt', name);
   btn.innerHTML = name;
@@ -13,9 +12,10 @@ const button = (name) => {
 
   return btn;
 };
+
 const addNav = () => {
   const nav = document.createElement('nav');
-  nav.className = 'min-w-full bg-blue-900 h-10 flex items-center justify-center font-mono text-white font-bold';
+  nav.className = 'min-w-full h-10 flex items-center justify-center font-mono text-white font-bold';
 
   const logo = document.createElement('i');
   logo.className = 'fas fa-stream fa-lg ml-2';
@@ -29,6 +29,7 @@ const addNav = () => {
 
   return nav;
 };
+
 const addGrid = () => {
   const grid = document.createElement('div');
   grid.setAttribute('id', 'grid');
@@ -70,9 +71,10 @@ const addGrid = () => {
 
   return grid;
 };
+
 const addControls = () => {
   const controls = document.createElement('footer');
-  controls.className = 'flex bg-blue-300 w-1/2 h-16 rounded-full position absolute bottom-0 border border-black items-center justify-center ring ring-white';
+  controls.className = 'flex w-1/2 h-16 rounded-full position absolute bottom-0  items-center justify-center ring ring-white';
 
   const addChore = button('Add Chore');
   addChore.classList.add('bg-green-500', 'text-black');

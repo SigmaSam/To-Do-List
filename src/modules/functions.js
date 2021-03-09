@@ -51,5 +51,5 @@ const addNewGroup = () => {
 };
 
 export {
-  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup,
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup
 };

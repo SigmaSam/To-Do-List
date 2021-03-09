@@ -3,7 +3,9 @@ import { modal, modalGroup } from './modules/modal';
 import {
   project, sortPrio, sortTime, filter,
 } from './modules/list';
-import { addNewChore, addNewGroup, groups } from './modules/functions';
+import { chores,addNewChore, addNewGroup, groups } from './modules/functions';
+
+console.log(chores)
 
 const addEvents = () => {
   const addButton = document.getElementById('Add Chore');

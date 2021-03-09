@@ -51,26 +51,54 @@ const showTodos = (chores) => {
     prioValue(chore.priority);
 
     const checkBox = document.createElement('div');
-    checkBox.className = 'w-1/5 border border-white rounded flex justify-center';
+    checkBox.className = 'w-1/5 border border-white rounded flex justify-center ';
 
     const status = document.createElement('button');
-    status.className = 'border border-black bg-white font-bold px-1 rounded';
+    status.setAttribute('type','button');
+    status.className = 'border border-black bg-white font-bold px-1 rounded mx-1';
     status.innertext = chore.status === true ? status.textContent = 'Done' : status.textContent = 'To Do';
 
     const changeStatus = () => {
       chore.status === true ? chore.status = false : chore.status = true;
       saveLocalChore();
       chore.status === true ? status.textContent = 'Done' : status.textContent = 'To Do';
-      window.location.reload();
     };
 
     status.addEventListener('click', changeStatus);
+
+    const edit = document.createElement('button');
+    edit.setAttribute('type','button');
+    edit.className = 'rounded mx-1 m-auto'
+
+    const editIcon = document.createElement('i');
+    editIcon.className = 'fas fa-edit'
+
+    edit.appendChild(editIcon);
+
+    const remove = document.createElement('button');
+    remove.setAttribute('type','button');
+    remove.className = 'rounded mx-1 m-auto'
+
+    const removeIcon = document.createElement('i');
+    removeIcon.className = 'far fa-trash-alt';   
+
+    remove.appendChild(removeIcon);
+
+    const removeChore = () => {
+      this.delete();
+      saveLocalChore();
+      window.location.reload();
+    }
+
+    remove.addEventListener('click',removeChore);
 
     cont.appendChild(title);
     cont.appendChild(description);
     cont.appendChild(time);
     cont.appendChild(priority);
     checkBox.appendChild(status);
+    checkBox.appendChild(edit);
+    checkBox.appendChild(remove);
     cont.appendChild(checkBox);
     grid.appendChild(cont);
   });
