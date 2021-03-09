@@ -1,4 +1,4 @@
-import {chores} from './functions';
+import {chores, groups} from './functions';
 
 const list = chores;
 
@@ -119,6 +119,12 @@ const sortTime = () => {
   showTodos(chores);
 }
 
+const filter = (group) => {
+  const filtered = chores.filter(chore => chore.group === group)
+  cleanGrid();
+  showTodos(filtered);
+}
+
 const project = () => {
   const all = list;
   const projects = Object.keys(all)
@@ -126,4 +132,4 @@ const project = () => {
   showTodos(allTodos);
 }
 
-export {project, sortPrio, sortTime};
+export {project, sortPrio, sortTime, filter};

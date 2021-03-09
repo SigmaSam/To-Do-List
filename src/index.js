@@ -1,6 +1,6 @@
 import page from './modules/page';
 import {modal, modalGroup} from './modules/modal';
-import {project, sortPrio, sortTime } from './modules/list';
+import {project, sortPrio, sortTime, filter } from './modules/list';
 import {chores, addNewChore, addNewGroup, groups } from './modules/functions';
 
 console.log(chores);
@@ -68,7 +68,15 @@ const addEvents = () => {
         e.preventDefault
         sortTime();
     })
-}
+
+    for (let i = 0; i < groups.length; i++) {
+        const groupBtn = document.getElementById(groups[i])
+        groupBtn.addEventListener('click', (e)=>{
+            e.preventDefault
+            filter(groupBtn.id);
+        })
+    }}
+    
 
 const body = () => {
     page();
@@ -79,7 +87,3 @@ const body = () => {
 };
 
 body();
-
-
-
-   
