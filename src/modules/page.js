@@ -1,8 +1,15 @@
+import { groups } from './functions';
+
 const button = (name) => {
     const btn = document.createElement('button');
+    
+
     btn.setAttribute('id', name);
+    btn.setAttribute('alt',name);
     btn.innerHTML = name;
-    btn.className = 'p-5 max-w-1/2 mx-1 rounded-full border-2 border-black ring-white font-bold text-sm capitalize italic bg-gray-400'
+    btn.className = 'btn mx-1 rounded-full border-2 border-black ring-white font-bold text-xs capitalize italic'
+
+    btn.setAttribute('title',name);
 
     return btn;
 }
@@ -69,11 +76,35 @@ const addControls = () => {
     const controls = document.createElement('footer');
     controls.className = 'flex bg-blue-300 w-1/2 h-16 rounded-full position absolute bottom-0 border border-black items-center justify-center ring ring-white'
 
-    const add = button('add');
-    const group = button('group');
+    const addChore = button('Add Chore');
+    addChore.classList.add('bg-green-500', 'text-black');
+    addChore.innerText = ''
     
-    controls.appendChild(add);
-    controls.appendChild(group);
+    const addIcon = document.createElement('i');
+    addIcon.className = 'fas fa-plus fa-2x';
+
+    addChore.appendChild(addIcon);
+  
+
+    const addGroup = button('Add Group');
+    addGroup.innerText = '';
+    addGroup.classList.add('bg-yellow-500');
+    const groupIcon = document.createElement('i');
+    groupIcon.className = 'fas fa-layer-group fa-2x';
+    
+    addGroup.appendChild(groupIcon)
+    
+    controls.appendChild(addChore);
+    controls.appendChild(addGroup);
+
+    const colors = ['pink','purple','indigo','blue','green','yellow','red']
+    
+    for (let i = 0; i < groups.length; i++) {
+      let color = colors[Math.floor(Math.random() * colors.length)];
+      const btn = button(groups[i]);
+      btn.classList.add(`bg-${color}-700`,'whitespace-normal','break-words');
+      controls.appendChild(btn);
+    }
 
     return controls
 }
