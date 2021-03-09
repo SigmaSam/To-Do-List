@@ -1,7 +1,7 @@
 import page from './modules/page';
 import { modal, modalGroup } from './modules/modal';
 import {
-  project, sortPrio, sortTime, filter,
+  project, sortPrio, sortTime, filter, cleanGrid
 } from './modules/list';
 import { chores,addNewChore, addNewGroup, groups } from './modules/functions';
 
@@ -18,6 +18,8 @@ const addEvents = () => {
   const addNewG = document.querySelector('#newGroup');
   const sortBtn = document.querySelector('#sort');
   const sortTimeBtn = document.querySelector('#sortTime');
+  const grouplessBtn = document.getElementById('Groupless');
+  const allChoresBtn = document.getElementById('See All');
   const winOne = (event) => {
     if (event.target === modCont) {
       modCont.style.display = 'none';
@@ -68,6 +70,20 @@ const addEvents = () => {
   sortTimeBtn.addEventListener('click', (e) => {
     e.preventDefault;
     sortTime();
+  });
+
+  
+  
+  grouplessBtn.addEventListener('click', (e) => {
+    e.preventDefault;
+    filter("");
+  });
+
+
+  allChoresBtn.addEventListener('click', (e) => {
+    e.preventDefault;
+    cleanGrid();
+    project();
   });
 
   for (let i = 0; i < groups.length; i += 1) {

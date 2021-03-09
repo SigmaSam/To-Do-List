@@ -84,13 +84,6 @@ const showTodos = (chores) => {
 
     remove.appendChild(removeIcon);
 
-    // const removeChore = () => {
-    //   const a = chores.indexOf(chore)
-    //   console.log( chores.splice(a,1));
-    //   saveLocalChore();
-    //   console.log(chores)
-    // }
-
     remove.addEventListener('click', (e) => {
       e.preventDefault;
       removeChore(chore);
@@ -166,5 +159,5 @@ const project = () => {
 };
 
 export {
-  project, sortPrio, sortTime, filter,
+  project, sortPrio, sortTime, filter, cleanGrid
 };

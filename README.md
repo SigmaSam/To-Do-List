@@ -24,8 +24,8 @@ To get a local copy up and running follow these simple example steps.
 
 - Clone this repository. Type `git clone https://github.com/SigmaSam/To-Do-List.git`
 - Navigate to the project folder (Library-JS) `cd To-Do-List`
+- run `npm install` to get all packages needed for the app then run `npm run build`.
 - Open the `index.html` with the browser `double click on index.html` if you want to see the app running.
-- Open the folder Library-JS(Step 2) with an editor of your preference if you want to see the code.
 
 ### Run tests
 

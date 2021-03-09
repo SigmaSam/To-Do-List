@@ -94,8 +94,27 @@ const addControls = () => {
 
   addGroup.appendChild(groupIcon);
 
+  const addDefault = button('Groupless');
+  addDefault.innerText = '';
+  addDefault.classList.add('bg-purple-500');
+  const defaultIcon = document.createElement('i');
+  defaultIcon.className = 'fas fa-users fa-2x';
+
+  addDefault.appendChild(defaultIcon);
+
+  const addAll = button('See All');
+  addAll.innerText = '';
+  addAll.classList.add('bg-blue-500');
+  const allIcon = document.createElement('i');
+  allIcon.className = 'fas fa-stream fa-2x';
+
+  addAll.appendChild(allIcon);
+
+  
   controls.appendChild(addChore);
   controls.appendChild(addGroup);
+  controls.appendChild(addAll);
+  controls.appendChild(addDefault);
 
   const colors = ['pink', 'purple', 'indigo', 'blue', 'green', 'yellow', 'red'];
 
