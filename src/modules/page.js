@@ -32,7 +32,7 @@ const addNav = () => {
 const addGrid = () => {
   const grid = document.createElement('div');
   grid.setAttribute('id', 'grid');
-  grid.className = 'grilla bg-white border-2 border-grey rounded p-1 flex flex-col m-auto w-9/12 h-96 lg:text-md md:text-sm';
+  grid.className = 'overflow-auto grilla bg-white border-2 border-grey rounded p-1 flex flex-col m-auto w-9/12 h-96 lg:text-md md:text-sm';
 
   const cont = document.createElement('div');
   cont.className = 'flex justify-between w-full';
