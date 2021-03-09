@@ -23,6 +23,14 @@ const addChore = (chore) => {
   chores.push(chore);
   saveLocalChore();
 };
+
+const removeChore = (chore) => {
+  let index = chores.indexOf(chore)
+  chores.splice(index,1);
+  saveLocalChore();
+  window.location.reload();
+};
+
 const addGroup = (name) => {
   groups.push(name);
   saveLocalGroup();
@@ -50,12 +58,6 @@ const addNewGroup = () => {
   addGroup(group);
 };
 
-const removeChore = (chore) => {
-  chores.filter(x => x.tittle !== chore.tittle )
-  saveLocalChore();
-  window.location.reload();
-}
-
 export {
-  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup,removeChore
 };

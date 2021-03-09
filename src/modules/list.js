@@ -1,6 +1,6 @@
-import { chores, saveLocalChore,removeChore } from './functions';
+import { chores, saveLocalChore, removeChore } from './functions';
 
-const list = chores;
+let list = chores;
 
 const todos = () => {
   const todos = [];
@@ -84,7 +84,17 @@ const showTodos = (chores) => {
 
     remove.appendChild(removeIcon);
 
-    remove.addEventListener('click',removeChore(chore));
+    // const removeChore = () => {
+    //   const a = chores.indexOf(chore)
+    //   console.log( chores.splice(a,1));
+    //   saveLocalChore();
+    //   console.log(chores)
+    // }
+
+    remove.addEventListener('click', (e) => {
+      e.preventDefault;
+      removeChore(chore);
+    });
 
     cont.appendChild(title);
     cont.appendChild(description);
