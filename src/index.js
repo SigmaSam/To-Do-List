@@ -7,8 +7,8 @@ console.log(chores);
 console.log(groups);
 
 const addEvents = () => {
-    const addButton = document.getElementById('add');
-    const groupButton = document.getElementById('group');
+    const addButton = document.getElementById('Add Chore');
+    const groupButton = document.getElementById('Add Group');
     const modCont = document.querySelector('#modal');
     const modGroup = document.querySelector('#modalGroup');
     const spanOne = document.querySelector('#cancel');
