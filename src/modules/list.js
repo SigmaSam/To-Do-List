@@ -1,4 +1,4 @@
-import { chores, saveLocalChore } from './functions';
+import { chores, saveLocalChore,removeChore } from './functions';
 
 const list = chores;
 
@@ -84,13 +84,7 @@ const showTodos = (chores) => {
 
     remove.appendChild(removeIcon);
 
-    const removeChore = () => {
-      this.delete();
-      saveLocalChore();
-      window.location.reload();
-    }
-
-    remove.addEventListener('click',removeChore);
+    remove.addEventListener('click',removeChore(chore));
 
     cont.appendChild(title);
     cont.appendChild(description);

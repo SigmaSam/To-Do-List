@@ -50,6 +50,12 @@ const addNewGroup = () => {
   addGroup(group);
 };
 
+const removeChore = (chore) => {
+  chores.filter(x => x.tittle !== chore.tittle )
+  saveLocalChore();
+  window.location.reload();
+}
+
 export {
-  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore
 };
