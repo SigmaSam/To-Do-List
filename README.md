@@ -1,8 +1,8 @@
 # Library
 
-> This is a To-Do list web app that allows you to create diferent activities, give them a deadline a level of priority a small description and even group and bounch of them, also letting you mark them as completed to follow your progress.
-  ​
-- Every move is saved in the local storage of your browser.
+This is a To-Do list web app that allows you to create diferent activities, give them a deadline a level of priority a small description and even group and bounch of them, also letting you mark them as completed to follow your progress.
+
+Every move is saved in the local storage of your browser.
 
 ## Built With
 
@@ -13,6 +13,8 @@
 - VScode
 
 ## Live Demo
+
+![Tracker](assets/trackerJS.png)
 
 <a href="https://raw.githack.com/SigmaSam/To-Do-List/main/dist/index.html" target="_blank">Live version</a>
 
