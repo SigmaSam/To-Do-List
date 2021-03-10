@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+nav {
+    background-color: #304359;
+}
+
+footer {
+    background-color: #698679;
+}
+.grilla {
+    height: 31rem;
+}
+
+.grilla div {
+    grid-row-start: auto;
+}
+
+.btn {
+    display:block;
+    height: 3rem;
+    width: 3rem;
+}
+body {
+    background-color: #3aa2be;
+    background-image: linear-gradient(30deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd), linear-gradient(150deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd), linear-gradient(30deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd), linear-gradient(150deg, #80c9dd 12%, transparent 12.5%, transparent 87%, #80c9dd 87.5%, #80c9dd), linear-gradient(60deg,  #c8c4ba 25%, transparent 25.5%, transparent 75%,  #c8c4ba 75%, #d5eaf0), linear-gradient(60deg,  #c8c4ba 25%, transparent 25.5%, transparent 75%,  #c8c4ba 75%, #d5eaf0);
+    background-size: 40px 70px;
+    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+  }
+
+
+@tailwind utilities;
