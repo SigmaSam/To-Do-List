@@ -1,6 +1,6 @@
 # Library
 
-This is a To-Do list web app that allows you to create diferent activities, give them a deadline a level of priority a small description and even group and bounch of them, also letting you mark them as completed to follow your progress.
+This is a To-Do list web app that allows you to create diferent activities, give them a deadline a level of priority a small description and even group and bounch of them and sort them from level of urgency deadline or group they belong, oh and also letting you mark them as completed to follow your progress.
 
 Every move is saved in the local storage of your browser.
 
