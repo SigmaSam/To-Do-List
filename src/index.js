@@ -3,7 +3,7 @@ import { modal, modalGroup } from './modules/modal';
 import {
   project, sortPrio, sortTime, filter, cleanGrid
 } from './modules/list';
-import { chores,addNewChore, addNewGroup, groups } from './modules/functions';
+import { chores,addNewChore, addNewGroup, groups, editChore } from './modules/functions';
 
 console.log(chores)
 

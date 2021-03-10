@@ -1,4 +1,5 @@
 import { chores, saveLocalChore, removeChore } from './functions';
+import { editModal } from './modal';
 
 let list = chores;
 
@@ -74,6 +75,13 @@ const showTodos = (chores) => {
     editIcon.className = 'fas fa-edit'
 
     edit.appendChild(editIcon);
+
+    edit.addEventListener('click', (e) => {
+      e.preventDefault;
+      editModal(chore);
+      const editForm = document.querySelector('#editModal')
+      editForm.style.display = 'block';
+    })
 
     const remove = document.createElement('button');
     remove.setAttribute('type','button');

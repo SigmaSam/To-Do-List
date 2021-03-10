@@ -52,6 +52,19 @@ const addNewChore = () => {
   addChore(newChore);
 }
 
+const editChore = (chore) => {
+  let index = chores.indexOf(chore);
+  const div = document.querySelector('#editModal');
+  const form = div.firstElementChild;
+  chores[index].title = form[0].value;
+  chores[index].description = form[1].value;
+  chores[index].time = form[2].value;
+  chores[index].priority = form[3].value;
+  chores[index].group = form[4].value;
+  saveLocalChore();
+  window.location.reload();
+}
+
 const addNewGroup = () => {
   const form = document.getElementById('groupForm');
   const group = form[0].value;
@@ -59,5 +72,5 @@ const addNewGroup = () => {
 };
 
 export {
-  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup,removeChore
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore, editChore
 };
