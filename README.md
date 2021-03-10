@@ -14,7 +14,7 @@
 
 ## Live Demo
 
-<a href="https://raw.githack.com/SigmaSam/To-Do-List/features/dist/index.html" target="_blank">Live version</a>
+<a href="https://raw.githack.com/SigmaSam/To-Do-List/main/dist/index.html" target="_blank">Live version</a>
 
 ## Getting Started
 
