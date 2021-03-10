@@ -1,11 +1,11 @@
 import page from './modules/page';
 import { modal, modalGroup } from './modules/modal';
 import {
-  project, sortPrio, sortTime, filter, cleanGrid
+  project, sortPrio, sortTime, filter, cleanGrid,
 } from './modules/list';
-import { chores,addNewChore, addNewGroup, groups, editChore } from './modules/functions';
-
-console.log(chores)
+import {
+  addNewChore, addNewGroup, groups,
+} from './modules/functions';
 
 const addEvents = () => {
   const addButton = document.getElementById('Add Chore');
@@ -72,11 +72,10 @@ const addEvents = () => {
     sortTime();
   });
 
-  
-  
+
   grouplessBtn.addEventListener('click', (e) => {
     e.preventDefault;
-    filter("");
+    filter('');
   });
 
 

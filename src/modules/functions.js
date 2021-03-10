@@ -25,8 +25,8 @@ const addChore = (chore) => {
 };
 
 const removeChore = (chore) => {
-  let index = chores.indexOf(chore)
-  chores.splice(index,1);
+  const index = chores.indexOf(chore);
+  chores.splice(index, 1);
   saveLocalChore();
   window.location.reload();
 };
@@ -50,10 +50,10 @@ const addNewChore = () => {
   const newChore = new Chore(title, description, time, priority, group, status);
 
   addChore(newChore);
-}
+};
 
 const editChore = (chore) => {
-  let index = chores.indexOf(chore);
+  const index = chores.indexOf(chore);
   const div = document.querySelector('#editModal');
   const form = div.firstElementChild;
   chores[index].title = form[0].value;
@@ -63,7 +63,7 @@ const editChore = (chore) => {
   chores[index].group = form[4].value;
   saveLocalChore();
   window.location.reload();
-}
+};
 
 const addNewGroup = () => {
   const form = document.getElementById('groupForm');
@@ -72,5 +72,5 @@ const addNewGroup = () => {
 };
 
 export {
-  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore, editChore
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore, editChore,
 };

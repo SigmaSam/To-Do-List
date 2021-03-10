@@ -1,4 +1,4 @@
-import { chores, groups, editChore } from './functions';
+import { groups, editChore } from './functions';
 
 const modal = () => {
   const body = document.getElementById('content');
@@ -256,7 +256,7 @@ const editModal = (chore) => {
   newChore.addEventListener('click', (e) => {
     e.preventDefault;
     editChore(chore);
-  })
+  });
 
   const cancel = document.createElement('button');
   cancel.setAttribute('id', 'cancelEdit');

@@ -1,7 +1,7 @@
 import { chores, saveLocalChore, removeChore } from './functions';
 import { editModal } from './modal';
 
-let list = chores;
+const list = chores;
 
 const todos = () => {
   const todos = [];
@@ -55,7 +55,7 @@ const showTodos = (chores) => {
     checkBox.className = 'w-1/5 border border-white rounded flex justify-center ';
 
     const status = document.createElement('button');
-    status.setAttribute('type','button');
+    status.setAttribute('type', 'button');
     status.className = 'border border-black bg-white font-bold px-1 rounded mx-1';
     status.innertext = chore.status === true ? status.textContent = 'Done' : status.textContent = 'To Do';
 
@@ -68,27 +68,27 @@ const showTodos = (chores) => {
     status.addEventListener('click', changeStatus);
 
     const edit = document.createElement('button');
-    edit.setAttribute('type','button');
-    edit.className = 'rounded mx-1 m-auto'
+    edit.setAttribute('type', 'button');
+    edit.className = 'rounded mx-1 m-auto';
 
     const editIcon = document.createElement('i');
-    editIcon.className = 'fas fa-edit'
+    editIcon.className = 'fas fa-edit';
 
     edit.appendChild(editIcon);
 
     edit.addEventListener('click', (e) => {
       e.preventDefault;
       editModal(chore);
-      const editForm = document.querySelector('#editModal')
+      const editForm = document.querySelector('#editModal');
       editForm.style.display = 'block';
-    })
+    });
 
     const remove = document.createElement('button');
-    remove.setAttribute('type','button');
-    remove.className = 'rounded mx-1 m-auto'
+    remove.setAttribute('type', 'button');
+    remove.className = 'rounded mx-1 m-auto';
 
     const removeIcon = document.createElement('i');
-    removeIcon.className = 'far fa-trash-alt';   
+    removeIcon.className = 'far fa-trash-alt';
 
     remove.appendChild(removeIcon);
 
@@ -167,5 +167,5 @@ const project = () => {
 };
 
 export {
-  project, sortPrio, sortTime, filter, cleanGrid
+  project, sortPrio, sortTime, filter, cleanGrid,
 };

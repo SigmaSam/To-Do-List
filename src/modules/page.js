@@ -110,7 +110,7 @@ const addControls = () => {
 
   addAll.appendChild(allIcon);
 
-  
+
   controls.appendChild(addChore);
   controls.appendChild(addGroup);
   controls.appendChild(addAll);
