@@ -2,7 +2,7 @@ const chores = JSON.parse(localStorage.getItem('chores')) || [];
 const groups = JSON.parse(localStorage.getItem('groups')) || [];
 
 class Chore {
-  constructor(title, description, time, priority, group = false, status = false) {
+  constructor(title = '', description = '', time = '', priority, group = false, status = false) {
     this.title = title;
     this.description = description;
     this.time = time;
@@ -20,8 +20,11 @@ const saveLocalGroup = () => {
 };
 
 const addChore = (chore) => {
-  chores.push(chore);
-  saveLocalChore();
+  const val = validateForm(chore.title, chore.description, chore.time);
+  if (val){
+    chores.push(chore);
+    saveLocalChore();
+  }
 };
 
 const removeChore = (chore) => {
@@ -36,6 +39,22 @@ const addGroup = (name) => {
   saveLocalGroup();
 };
 
+function validateForm(title, desc, time) {
+  if (title.length < 1) {
+    alert("Title must be filled out");
+    return false
+  }
+  if (desc.length < 1) {
+    alert("Description must be filled out");
+    return false
+  }
+  if (time.length < 1) {
+    alert("Time must be filled out");
+    return false
+  }
+  return true
+}
+
 const addNewChore = () => {
   const form = document.getElementsByTagName('form');
   const inputs = form[0];
@@ -48,7 +67,6 @@ const addNewChore = () => {
   const status = false;
 
   const newChore = new Chore(title, description, time, priority, group, status);
-
   addChore(newChore);
 };
 
@@ -72,5 +90,5 @@ const addNewGroup = () => {
 };
 
 export {
-  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore, editChore,
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore, editChore, addChore, Chore, validateForm
 };
