@@ -13,8 +13,10 @@ const todos = () => {
 
 const cleanGrid = () => {
   const del = document.getElementsByClassName('flex justify-between w-full chore-row');
-  while (del[0]) {
-    del[0].parentNode.removeChild(del[0]);
+  if (del !== null) {
+    while (del[0]) {
+      del[0].parentNode.removeChild(del[0]);
+    }
   }
 };
 
@@ -105,7 +107,9 @@ const showTodos = (chores) => {
     checkBox.appendChild(edit);
     checkBox.appendChild(remove);
     cont.appendChild(checkBox);
-    grid.appendChild(cont);
+    if (grid !== null) {
+      grid.appendChild(cont);
+    }
   });
 };
 

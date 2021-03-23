@@ -39,7 +39,7 @@ const addGroup = (name) => {
   saveLocalGroup();
 };
 
-function validateForm(title, desc, time) {
+const validateForm = (title, desc, time) => {
   if (title.length < 1) {
     return false;
   }
