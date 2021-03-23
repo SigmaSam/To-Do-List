@@ -19,6 +19,19 @@ const saveLocalGroup = () => {
   localStorage.setItem('groups', JSON.stringify(groups));
 };
 
+const validateForm = (title, desc, time) => {
+  if (title.length < 1) {
+    return false;
+  }
+  if (desc.length < 1) {
+    return false;
+  }
+  if (time.length < 1) {
+    return false;
+  }
+  return true;
+}
+
 const addChore = (chore) => {
   const val = validateForm(chore.title, chore.description, chore.time);
   if (val) {
@@ -39,18 +52,6 @@ const addGroup = (name) => {
   saveLocalGroup();
 };
 
-const validateForm = (title, desc, time) => {
-  if (title.length < 1) {
-    return false;
-  }
-  if (desc.length < 1) {
-    return false;
-  }
-  if (time.length < 1) {
-    return false;
-  }
-  return true;
-}
 
 const addNewChore = () => {
   const form = document.getElementsByTagName('form');
