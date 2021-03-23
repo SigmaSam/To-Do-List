@@ -21,7 +21,7 @@ const saveLocalGroup = () => {
 
 const addChore = (chore) => {
   const val = validateForm(chore.title, chore.description, chore.time);
-  if (val){
+  if (val) {
     chores.push(chore);
     saveLocalChore();
   }
@@ -41,18 +41,15 @@ const addGroup = (name) => {
 
 function validateForm(title, desc, time) {
   if (title.length < 1) {
-    alert("Title must be filled out");
-    return false
+    return false;
   }
   if (desc.length < 1) {
-    alert("Description must be filled out");
-    return false
+    return false;
   }
   if (time.length < 1) {
-    alert("Time must be filled out");
-    return false
+    return false;
   }
-  return true
+  return true;
 }
 
 const addNewChore = () => {
@@ -90,5 +87,5 @@ const addNewGroup = () => {
 };
 
 export {
-  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore, editChore, addChore, Chore, validateForm
+  chores, groups, addNewChore, saveLocalChore, saveLocalGroup, addNewGroup, removeChore, editChore, addChore, Chore, validateForm, addGroup,
 };
