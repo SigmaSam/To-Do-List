@@ -30,7 +30,7 @@ const validateForm = (title, desc, time) => {
     return false;
   }
   return true;
-}
+};
 
 const addChore = (chore) => {
   const val = validateForm(chore.title, chore.description, chore.time);
