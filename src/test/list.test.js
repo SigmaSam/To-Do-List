@@ -37,10 +37,10 @@ test('cleanGrid cleans all child elements in the grid', () => {
   expect(element.hasChildNodes()).toBe(true);
 });
 
-// test('filteredTask returns chores filtered by group', () => {
-//   testChores.list.filteredTasks(newChore.group);
-//   expect(func.chores.length).toBe(1)
-// });
+test('filteredTask returns chores filtered by group', () => {
+  const filtered = list.filteredTasks(newChore.group);
+  expect(filtered.length).toBe(1)
+});
 
 test('project returns all chores', () => {
   list.project();

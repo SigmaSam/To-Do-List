@@ -163,6 +163,7 @@ const filteredTasks = (group) => {
   const filtered = chores.filter(chore => chore.group === group);
   cleanGrid();
   showTodos(filtered);
+  return filtered;
 };
 
 const project = () => {
