@@ -172,5 +172,5 @@ const project = () => {
 };
 
 export {
-  project, sortPrio, sortTime, cleanGrid, filteredTasks
+  project, sortPrio, sortTime, cleanGrid, filteredTasks,
 };

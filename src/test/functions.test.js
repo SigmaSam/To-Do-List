@@ -7,12 +7,12 @@ const task = [
   {
     title: 'test',
     description: 'description text',
-    time: '2020-12-24'
+    time: '2020-12-24',
   },
   {
     title: '',
     description: '',
-    time: ''
+    time: '',
   },
 ];
 
@@ -26,10 +26,10 @@ test('addChore does not push an empty chore into chores array', () => {
   expect(func.chores.length).toBe(1);
 });
 
-test('saveLocalChore saves the item in to the local memory.', () => {  
+test('saveLocalChore saves the item in to the local memory.', () => {
   func.saveLocalChore();
   expect(func.chores.length).toBe(1);
-})
+});
 
 test('removeChore delete a specific chore in chores array', () => {
   func.addChore(newChore2);
@@ -42,15 +42,15 @@ test('addGroup push a group into groups array', () => {
   expect(func.groups[0]).toBe('new group');
 });
 
-test('saveLocalGroup saves the group in to the local memory.', () => {  
+test('saveLocalGroup saves the group in to the local memory.', () => {
   func.saveLocalGroup();
   expect(func.groups.length).toBe(1);
-})
+});
 
-test('validateForm returns true if the inputs are not empty', ()=> {
-  expect(func.validateForm(task[0].title,task[0].description,task[0].time)).toBe(true)
-})
+test('validateForm returns true if the inputs are not empty', () => {
+  expect(func.validateForm(task[0].title, task[0].description, task[0].time)).toBe(true);
+});
 
-test('validateForm returns false if the inputs are empty', ()=> {
-  expect(func.validateForm(task[1].title,task[1].description,task[1].time)).toBe(false)
-})
+test('validateForm returns false if the inputs are empty', () => {
+  expect(func.validateForm(task[1].title, task[1].description, task[1].time)).toBe(false);
+});
