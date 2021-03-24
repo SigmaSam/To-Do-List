@@ -159,7 +159,7 @@ const sortTime = () => {
   showTodos(chores);
 };
 
-const filter = (group) => {
+const filteredTasks = (group) => {
   const filtered = chores.filter(chore => chore.group === group);
   cleanGrid();
   showTodos(filtered);
@@ -171,5 +171,5 @@ const project = () => {
 };
 
 export {
-  project, sortPrio, sortTime, filter, cleanGrid,
+  project, sortPrio, sortTime, cleanGrid, filteredTasks
 };

@@ -15,6 +15,7 @@ class Chore {
 const saveLocalChore = () => {
   localStorage.setItem('chores', JSON.stringify(chores));
 };
+
 const saveLocalGroup = () => {
   localStorage.setItem('groups', JSON.stringify(groups));
 };
@@ -51,7 +52,6 @@ const addGroup = (name) => {
   groups.push(name);
   saveLocalGroup();
 };
-
 
 const addNewChore = () => {
   const form = document.getElementsByTagName('form');

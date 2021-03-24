@@ -1,7 +1,7 @@
 import page from './modules/page';
 import { modal, modalGroup } from './modules/modal';
 import {
-  project, sortPrio, sortTime, filter, cleanGrid,
+  project, sortPrio, sortTime, filteredTasks, cleanGrid,
 } from './modules/list';
 import {
   addNewChore, addNewGroup, groups,
@@ -75,7 +75,7 @@ const addEvents = () => {
 
   grouplessBtn.addEventListener('click', (e) => {
     e.preventDefault;
-    filter('');
+    filteredTasks('');
   });
 
 
@@ -89,7 +89,7 @@ const addEvents = () => {
     const groupBtn = document.getElementById(groups[i]);
     groupBtn.addEventListener('click', (e) => {
       e.preventDefault;
-      filter(groupBtn.id);
+      filteredTasks(groupBtn.id);
     });
   }
 };
