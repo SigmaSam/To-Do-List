@@ -54,3 +54,31 @@ test('validateForm returns true if the inputs are not empty', () => {
 test('validateForm returns false if the inputs are empty', () => {
   expect(func.validateForm(task[1].title, task[1].description, task[1].time)).toBe(false);
 });
+
+test('editChore changes the values of a specific chore', () => {
+  const body = document.querySelector('body');
+  const div = document.createElement('div');
+  div.setAttribute('id', 'editModal');
+  const form = document.createElement('form');
+  const title = document.createElement('input');
+  const description = document.createElement('input');
+  const time = document.createElement('input');
+  const priority = document.createElement('input');
+  const group = document.createElement('input');
+
+  title.setAttribute('value', 'changed');
+  description.setAttribute('value', 'desc');
+  time.setAttribute('value', '2020-12-12');
+  priority.setAttribute('value', '1');
+  group.setAttribute('value', 'group changed');
+
+  form[0] = title;
+  form[1] = description;
+  form[2] = time;
+  form[3] = priority;
+  form[4] = group;
+  div.appendChild(form);
+  body.appendChild(div);
+  func.editChore(newChore2);
+  expect(func.chores[0].title).toBe('changed');
+});
